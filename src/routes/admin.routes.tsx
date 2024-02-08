@@ -1,19 +1,7 @@
-import { ReactNode } from "react";
 import AdminDashboard from "../pages/admin/AdminDashboard/AdminDashboard";
 import CreateAdmin from "../pages/admin/CreateAdmin/CreateAdmin";
 import CreateFaculty from "../pages/admin/CreateFaculty/CreateFaculty";
 import CreateStudent from "../pages/admin/CreateStudent/CreateStudent";
-
-type TRoute = {
-  path: string;
-  element: ReactNode;
-};
-
-type TSidebarItem = {
-  key: string;
-  label: ReactNode;
-  children?: TSidebarItem[];
-};
 
 export const adminPaths = [
   {
