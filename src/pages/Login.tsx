@@ -2,6 +2,7 @@ import { Button } from "antd";
 import { FieldValues, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import PHForm from "../components/form/PHForm";
 import { useLoginMutation } from "../redux/features/auth/authApi";
 import { TUser, setUser } from "../redux/features/auth/authSlice";
 import { useAppDispatch } from "../redux/hooks";
@@ -46,7 +47,7 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <PHForm onSubmit={onSubmit}>
       <div>
         <label htmlFor="id">Id:</label>
         <input type="text" id="id" {...register("id")} />
@@ -57,7 +58,7 @@ const Login = () => {
       </div>
 
       <Button htmlType="submit">Login</Button>
-    </form>
+    </PHForm>
   );
 };
 
