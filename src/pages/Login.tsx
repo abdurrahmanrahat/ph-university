@@ -1,4 +1,4 @@
-import { Button } from "antd";
+import { Button, Row } from "antd";
 import { FieldValues } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
@@ -26,6 +26,7 @@ const Login = () => {
   console.log("error =>", error);
 
   const onSubmit = async (data: FieldValues) => {
+    console.log(data);
     const toastId = toast.loading("User logging in...");
 
     try {
@@ -48,16 +49,15 @@ const Login = () => {
   };
 
   return (
-    <PHForm onSubmit={onSubmit}>
-      <div>
+    <Row justify="center" align="middle" style={{ height: "100vh" }}>
+      <PHForm onSubmit={onSubmit}>
         <PHInput type="text" name="id" label="ID:" />
-      </div>
-      <div>
-        <PHInput type="text" name="password" label="Password:" />
-      </div>
 
-      <Button htmlType="submit">Login</Button>
-    </PHForm>
+        <PHInput type="text" name="password" label="Password:" />
+
+        <Button htmlType="submit">Login</Button>
+      </PHForm>
+    </Row>
   );
 };
 
