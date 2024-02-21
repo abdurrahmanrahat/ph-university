@@ -8,7 +8,9 @@ export type TTableData = Pick<
 >;
 
 const AcademicSemester = () => {
-  const { data: semesters } = useGetAllSemestersQuery(undefined);
+  const { data: semesters } = useGetAllSemestersQuery([
+    { name: "year", value: "2024" },
+  ]);
   console.log(semesters);
 
   const tableData = semesters?.data?.map(
